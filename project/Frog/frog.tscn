@@ -1,3 +1,80 @@
-[gd_scene format=3 uid="uid://dgs6o0eqimisw"]
+[gd_scene load_steps=12 format=3 uid="uid://dgs6o0eqimisw"]
 
-[node name="Frog" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bwc70p8rwvblb" path="res://Frog/ToxicFrogBlueBlue_Idle.png" id="1_8jvje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra8eg"]
+size = Vector2(22, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu600"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkhrf"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iun53"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uy41"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jpgn"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cwds"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhurx"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5k70"]
+atlas = ExtResource("1_8jvje")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aet8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkhrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iun53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uy41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jpgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cwds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhurx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5k70")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Frog" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_ra8eg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aet8e")
+animation = &"idle"
