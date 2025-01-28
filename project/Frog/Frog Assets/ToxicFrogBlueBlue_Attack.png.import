@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vxfnyxsxe1y7"
-path="res://.godot/imported/ToxicFrogBlueBlue_Attack.png-1d0edd5cf58be01d2548ec7347d5024f.ctex"
+path="res://.godot/imported/ToxicFrogBlueBlue_Attack.png-e21a7a9cfc431313b31d03044e3bd86b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Frog/ToxicFrogBlueBlue_Attack.png"
-dest_files=["res://.godot/imported/ToxicFrogBlueBlue_Attack.png-1d0edd5cf58be01d2548ec7347d5024f.ctex"]
+source_file="res://Frog/Frog Assets/ToxicFrogBlueBlue_Attack.png"
+dest_files=["res://.godot/imported/ToxicFrogBlueBlue_Attack.png-e21a7a9cfc431313b31d03044e3bd86b.ctex"]
 
 [params]
 
