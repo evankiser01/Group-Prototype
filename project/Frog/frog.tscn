@@ -214,7 +214,8 @@ script = ExtResource("1_rs5dc")
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_ra8eg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"idle"
-frame_progress = 0.728946
+frame = 3
+frame_progress = 0.619189
