@@ -182,6 +182,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_fu600")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fu600")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bkhrf")
 }, {
 "duration": 1.0,
@@ -217,5 +220,3 @@ shape = SubResource("RectangleShape2D_ra8eg")
 [node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"idle"
-frame = 3
-frame_progress = 0.619189
