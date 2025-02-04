@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://b8a1qdb0b2gp6"]
+[gd_scene load_steps=6 format=4 uid="uid://b8a1qdb0b2gp6"]
 
 [ext_resource type="Texture2D" uid="uid://c0mvjxarw2qrh" path="res://2 Background/Background.png" id="1_660do"]
-[ext_resource type="Script" path="res://World/world.gd" id="1_buueb"]
 [ext_resource type="Texture2D" uid="uid://c2l0muws3lo6" path="res://1 Tiles/Tileset.png" id="2_w0ta5"]
 [ext_resource type="PackedScene" uid="uid://dgs6o0eqimisw" path="res://Frog/frog.tscn" id="3_d6ypa"]
-[ext_resource type="AudioStream" uid="uid://c5dojefa74le7" path="res://World/background_music.mp3" id="4_10sf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7dte"]
 texture = ExtResource("2_w0ta5")
@@ -244,7 +242,6 @@ physics_layer_0/collision_layer = 1
 sources/6 = SubResource("TileSetAtlasSource_r7dte")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_buueb")
 
 [node name="TextureRectLeft" type="TextureRect" parent="."]
 offset_left = -1150.0
@@ -277,7 +274,3 @@ limit_left = -1150
 limit_right = 2304
 limit_bottom = 650
 limit_smoothed = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_10sf0")
-volume_db = -5.0
