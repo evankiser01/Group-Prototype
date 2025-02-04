@@ -113,7 +113,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4evp"]
 radius = 51.1566
 
-[node name="Bee" type="RigidBody2D"]
+[node name="Bee" type="RigidBody2D" groups=["bee"]]
 position = Vector2(-10, -26)
 script = ExtResource("1_vl8xt")
 
@@ -127,7 +127,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"attack"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["bee"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(10, -6)
