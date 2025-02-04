@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dgs6o0eqimisw"]
+[gd_scene load_steps=34 format=3 uid="uid://dgs6o0eqimisw"]
 
 [ext_resource type="Texture2D" uid="uid://bwc70p8rwvblb" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Idle.png" id="1_8jvje"]
 [ext_resource type="Texture2D" uid="uid://vxfnyxsxe1y7" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Attack.png" id="1_os8xp"]
@@ -210,7 +210,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Frog" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nrxl5"]
+radius = 3.0
+height = 14.0
+
+[node name="Frog" type="CharacterBody2D" groups=["frog"]]
 script = ExtResource("1_rs5dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -221,3 +225,14 @@ shape = SubResource("RectangleShape2D_ra8eg")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"attack"
+frame = 3
+frame_progress = 0.692297
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(19, -1)
+rotation = 1.5708
+
+[node name="tongueCollision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_nrxl5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://8ru1xs8yv2on"]
+[gd_scene load_steps=20 format=3 uid="uid://8ru1xs8yv2on"]
 
-[ext_resource type="Script" path="res://Frog/frog.gd" id="1_vl8xt"]
+[ext_resource type="Script" path="res://enemy/bee.gd" id="1_vl8xt"]
 [ext_resource type="Texture2D" uid="uid://s4cg2vueg8bs" path="res://World/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Attack/Attack-Sheet.png" id="2_3evfc"]
 [ext_resource type="Texture2D" uid="uid://bgcer206fuuva" path="res://World/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Fly/Fly-Sheet.png" id="3_1dmk3"]
 [ext_resource type="Texture2D" uid="uid://hhcwxjv61s12" path="res://World/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Hit/Hit-Sheet.png" id="4_5m5ho"]
@@ -110,7 +110,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Frog" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4evp"]
+radius = 51.1566
+
+[node name="Bee" type="RigidBody2D"]
 position = Vector2(-10, -26)
 script = ExtResource("1_vl8xt")
 
@@ -123,3 +126,11 @@ texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, -6)
+shape = SubResource("CircleShape2D_y4evp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

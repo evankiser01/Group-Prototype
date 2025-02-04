@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://b8a1qdb0b2gp6"]
+[gd_scene load_steps=9 format=4 uid="uid://b8a1qdb0b2gp6"]
 
 [ext_resource type="Texture2D" uid="uid://c0mvjxarw2qrh" path="res://2 Background/Background.png" id="1_660do"]
 [ext_resource type="Texture2D" uid="uid://c2l0muws3lo6" path="res://1 Tiles/Tileset.png" id="2_w0ta5"]
 [ext_resource type="PackedScene" uid="uid://dgs6o0eqimisw" path="res://Frog/frog.tscn" id="3_d6ypa"]
 [ext_resource type="PackedScene" uid="uid://8ru1xs8yv2on" path="res://enemy/bee.tscn" id="4_vv4m3"]
 [ext_resource type="Shader" path="res://World/enemyShader.gdshader" id="5_y7r66"]
-[ext_resource type="Script" path="res://enemy/frog.gd" id="6_d1koe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7dte"]
 texture = ExtResource("2_w0ta5")
@@ -247,9 +246,6 @@ sources/6 = SubResource("TileSetAtlasSource_r7dte")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6myr0"]
 shader = ExtResource("5_y7r66")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ackdp"]
-radius = 58.0345
-
 [node name="World" type="Node2D"]
 
 [node name="TextureRectLeft" type="TextureRect" parent="."]
@@ -284,11 +280,8 @@ limit_right = 2304
 limit_bottom = 650
 limit_smoothed = true
 
-[node name="Frog2" parent="." instance=ExtResource("4_vv4m3")]
+[node name="bee" parent="." groups=["bee"] instance=ExtResource("4_vv4m3")]
 material = SubResource("ShaderMaterial_6myr0")
 position = Vector2(559, 569)
-script = ExtResource("6_d1koe")
 
-[node name="deathZone" type="CollisionShape2D" parent="Frog2"]
-position = Vector2(-1.5, -1.5)
-shape = SubResource("CircleShape2D_ackdp")
+[connection signal="attack" from="Frog" to="bee" method="_on_frog_attack"]
