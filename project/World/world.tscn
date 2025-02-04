@@ -267,7 +267,7 @@ tile_map_data = PackedByteArray("AAAAACcABgACAAAAAAAAACgABgACAAEAAAABACcABgADAAA
 tile_set = SubResource("TileSet_1dpj7")
 
 [node name="Frog" parent="." instance=ExtResource("3_d6ypa")]
-position = Vector2(285, 593)
+position = Vector2(284, 597)
 scale = Vector2(3, 3)
 
 [node name="Frog Cam" type="Camera2D" parent="Frog"]
