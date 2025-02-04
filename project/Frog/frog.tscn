@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhpqrb11yu4r7" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Hurt.png" id="3_o2src"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra8eg"]
-size = Vector2(22, 18)
+size = Vector2(22, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_133cx"]
 atlas = ExtResource("1_os8xp")
@@ -214,9 +214,10 @@ animations = [{
 script = ExtResource("1_rs5dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_ra8eg")
 
 [node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_aet8e")
-animation = &"hop"
+animation = &"attack"

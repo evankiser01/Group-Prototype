@@ -26,7 +26,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("hop")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animated_sprite.play("idle")
+		if not Input.is_anything_pressed():
+			animated_sprite.play("idle")
 		
 	if Input.is_action_just_pressed("attack"):
 		animated_sprite.play("attack")
