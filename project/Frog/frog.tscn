@@ -1,10 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://dgs6o0eqimisw"]
+[gd_scene load_steps=35 format=3 uid="uid://dgs6o0eqimisw"]
 
 [ext_resource type="Texture2D" uid="uid://bwc70p8rwvblb" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Idle.png" id="1_8jvje"]
 [ext_resource type="Texture2D" uid="uid://vxfnyxsxe1y7" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Attack.png" id="1_os8xp"]
 [ext_resource type="Script" path="res://Frog/frog.gd" id="1_rs5dc"]
 [ext_resource type="Texture2D" uid="uid://docj6yncaa5c0" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Hop.png" id="2_0xjxo"]
 [ext_resource type="Texture2D" uid="uid://bhpqrb11yu4r7" path="res://Frog/Frog Assets/ToxicFrogBlueBlue_Hurt.png" id="3_o2src"]
+[ext_resource type="AudioStream" uid="uid://utjr2wst5b04" path="res://Frog/Frog Assets/croak.wav" id="6_bodhj"]
+[ext_resource type="AudioStream" uid="uid://clp0fiohe757b" path="res://Frog/Frog Assets/grass_walking.wav" id="7_uosgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra8eg"]
 size = Vector2(22, 16)
@@ -222,3 +224,11 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_aet8e")
 animation = &"hop"
 frame_progress = 0.323903
+
+[node name="Frog_Croak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bodhj")
+volume_db = -5.0
+
+[node name="Frog_Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uosgf")
+volume_db = 12.0
